@@ -49,12 +49,7 @@
 	<!-- PSYCH ENGINE CUSTOMIZATION -->
 	<define name="MODS_ALLOWED" if="desktop" />
 	<define name="LUA_ALLOWED" if="desktop" />
-	<define name="ACHIEVEMENTS_ALLOWED" />
 	<define name="VIDEOS_ALLOWED" if="web || windows" unless="32bits"/>
-	<define name="PSYCH_WATERMARKS"/> <!-- DELETE THIS TO REMOVE WATERMARKS ON TITLE SCREEN -->
-
-	<!-- DONT ENABLE THIS -->
-	<define name="CHECK_FOR_UPDATES" if="desktop officialBuild"/>
 
 	<!-- <define name="PRELOAD_ALL" /> -->
 	<define name="PRELOAD_ALL" unless="web" />
@@ -99,11 +94,7 @@
 	<assets path="assets/week6"         library="week6"         exclude="*.ogg" if="web"/>
 	<assets path="assets/week6"         library="week6"         exclude="*.mp3" unless="web"/>
 	
-	<assets path='example_mods' rename='mods' embed='false' if="MODS_ALLOWED"/>
-	<assets path='art/readme.txt' rename='do NOT readme.txt' />
-	<!-- <template path='mods' /> -->
-	
-	<!-- assets path="CHANGELOG.md" rename='changelog.txt' -->
+	<assets path='example_mods' rename='mods' embed='false' if="MODS_ALLOWED"/>>
 
 	<!-- NOTE FOR FUTURE SELF SINCE FONTS ARE ALWAYS FUCKY 
 		TO FIX ONE OF THEM, I CONVERTED IT TO OTF. DUNNO IF YOU NEED TO
