@@ -203,8 +203,39 @@ class SearchResultSubstate extends MusicBeatSubstate
 			if (sowy != "" && input == "enter"){
 				// do search
 				persistentUpdate = false;
-				StoryMenuState.searchBar.text = sowy;
+				
 				openSubState(new SearchResultSubstate(sowy));
+			}
+		};
+
+		searchBar.callback = function(sowy:String, input:String){ // is also on StoryMenuSubstate
+			searchGhost.visible = (sowy == "");
+	
+			if (sowy != "" && input == "enter"){
+				switch(sowy.toLowerCase()){
+	
+					// load a secret song
+					case "obby for succ":
+						StoryMenuState.loadSong("INAPPROPRIATE");
+					
+					case "tacos":
+						StoryMenuState.loadSong("annoying");
+					
+					case "foreseen":
+						StoryMenuState.loadSong("Cyberphobia");
+					
+					case "da hood":
+						StoryMenuState.loadSong("hank in da hood");
+					
+					case "studio":
+						StoryMenuState.loadSong("W.I.P");
+					
+					
+					default: // search in "freeplay"
+						persistentUpdate = false;
+						StoryMenuState.searchBar.text = sowy;
+						openSubState(new SearchResultSubstate(sowy));
+				}
 			}
 		};
 

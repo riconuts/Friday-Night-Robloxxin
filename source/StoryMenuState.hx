@@ -32,8 +32,8 @@ class StoryMenuState extends MusicBeatState
 	var vignette:FlxSprite;
 
 	static var curSelected:Int = 0;
-	static var curDifficulty:Int = 1;
-	private static var lastDifficultyName:String = '';
+	static var curDifficulty:Int = 2;
+	private static var lastDifficultyName:String = 'Hard';
 
 	public static var doingTransition:Bool = false;
 	public static var overAnArrow:Bool = false;
@@ -128,7 +128,6 @@ class StoryMenuState extends MusicBeatState
 			}
 		}
 		
-		trace(songArray);
 
 		////
 		var bg = new FlxSprite().makeGraphic(FlxG.width, FlxG.height, FlxColor.fromRGB(242, 244, 245));
@@ -170,12 +169,12 @@ class StoryMenuState extends MusicBeatState
 		var searchGhost = new FlxText(430, 16, 420, "Search");
 		searchGhost.setFormat(Paths.font("gothamss.ttf"), 24, FlxColor.fromRGB(200, 200, 200));
 
-		searchBar.callback = function(sowy:String, input:String){
+		searchBar.callback = function(sowy:String, input:String){ // is also on SearchResultSubstate
 			searchGhost.visible = (sowy == "");
-
+	
 			if (sowy != "" && input == "enter"){
 				switch(sowy.toLowerCase()){
-
+	
 					// load a secret song
 					case "obby for succ":
 						loadSong("INAPPROPRIATE");
@@ -196,6 +195,7 @@ class StoryMenuState extends MusicBeatState
 					default: // search in "freeplay"
 						persistentUpdate = false;
 						doingTransition = true;
+						StoryMenuState.searchBar.text = sowy;
 						openSubState(new SearchResultSubstate(sowy));
 				}
 			}
@@ -232,7 +232,7 @@ class StoryMenuState extends MusicBeatState
 		leftArrow.onOut.callback = outFunc;
 		rightArrow.onOver.callback = overFunc;
 		rightArrow.onOut.callback = outFunc;
-
+		
 		changeSelection();
 		changeDifficulty();
 
@@ -356,17 +356,19 @@ class StoryMenuState extends MusicBeatState
 		}
 	}
 
-	function loadSong(daSong:String, weekNumber:Int = 912389) // For secret songs
+	public static function loadSong(daSong:String, weekNumber:Int = 912389) // For secret songs
 	{
 		PlayState.isStoryMode = false;
 
 		PlayState.storyWeek = weekNumber;
 		PlayState.storyPlaylist = [daSong];
 
-		PlayState.storyDifficulty = curDifficulty;
+		var leDifficulty = 1; // "Normal" Difficulty // curDifficulty
 
-		var diffic = CoolUtil.getDifficultyFilePath(curDifficulty);
-		diffic = (diffic == null || diffic == "-null") ? '' : diffic; // we do some branchless code
+		PlayState.storyDifficulty = leDifficulty;
+
+		var diffic = CoolUtil.getDifficultyFilePath(leDifficulty);
+		diffic = (diffic == null || diffic == "-null") ? '' : diffic;
 		
 		PlayState.SONG = Song.loadFromJson(daSong.toLowerCase() + diffic, daSong.toLowerCase());
 		PlayState.campaignScore = 0;
