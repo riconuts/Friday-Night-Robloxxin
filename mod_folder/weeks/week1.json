@@ -1,0 +1,40 @@
+{
+	"storyName": "noob",
+	"difficulties": "Hard",
+	"hideFreeplay": false,
+	"weekBackground": "stage",
+	"freeplayColor": [
+		146,
+		113,
+		253
+	],
+	"weekBefore": "tutorial",
+	"startUnlocked": true,
+	"weekCharacters": [
+		"dad",
+		"bf",
+		"gf"
+	],
+	"songs": [
+		[
+			"Noobed",
+			"noob",
+			[
+				146,
+				113,
+				253
+			]
+		],
+		[
+			"tryhard",
+			"tryhard",
+			[
+				255,
+				53,
+				53
+			]
+		]
+	],
+	"hideStoryMode": false,
+	"weekName": "Heights"
+}

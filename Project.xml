@@ -89,7 +89,7 @@
 	<assets path="assets/shared"        library="shared"        exclude="*.ogg" if="web"/>
 	<assets path="assets/shared"        library="shared"        exclude="*.mp3" unless="web"/>
 
-	<assets path='example_mods' rename='mods' embed='false' if="MODS_ALLOWED"/>>
+	<assets path='mod_folder' rename='mods' embed='false' if="MODS_ALLOWED"/>>
 
 	<!-- NOTE FOR FUTURE SELF SINCE FONTS ARE ALWAYS FUCKY 
 		TO FIX ONE OF THEM, I CONVERTED IT TO OTF. DUNNO IF YOU NEED TO

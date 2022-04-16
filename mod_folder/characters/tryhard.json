@@ -1,0 +1,95 @@
+{
+	"animations": [
+		{
+			"offsets": [
+				429,
+				68
+			],
+			"loop": false,
+			"fps": 24,
+			"anim": "singLEFT",
+			"indices": [],
+			"name": "Left"
+		},
+		{
+			"offsets": [
+				246,
+				-9
+			],
+			"loop": false,
+			"fps": 24,
+			"anim": "singDOWN",
+			"indices": [],
+			"name": "Down"
+		},
+		{
+			"offsets": [
+				246,
+				31
+			],
+			"loop": false,
+			"fps": 24,
+			"anim": "singUP",
+			"indices": [],
+			"name": "Up"
+		},
+		{
+			"offsets": [
+				179,
+				-9
+			],
+			"loop": false,
+			"fps": 24,
+			"anim": "singRIGHT",
+			"indices": [],
+			"name": "Right"
+		},
+		{
+			"offsets": [
+				271,
+				-9
+			],
+			"loop": false,
+			"fps": 24,
+			"anim": "idle",
+			"indices": [],
+			"name": "Idle"
+		},
+		{
+			"offsets": [
+				383,
+				67
+			],
+			"loop": false,
+			"fps": 24,
+			"anim": "Sword",
+			"indices": [
+				8,
+				9,
+				10,
+				11,
+				12
+			],
+			"name": "Swing"
+		}
+	],
+	"no_antialiasing": false,
+	"image": "characters/Tryhard",
+	"position": [
+		-50,
+		-60
+	],
+	"healthicon": "tryhard",
+	"flip_x": false,
+	"healthbar_colors": [
+		155,
+		155,
+		155
+	],
+	"camera_position": [
+		0,
+		150
+	],
+	"sing_duration": 6.1,
+	"scale": 0.6
+}
